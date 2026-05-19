@@ -1,0 +1,973 @@
+<style>
+  
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css');
+
+
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --verde:#2D5016;--verde-m:#4A7C2F;--verde-l:#6B9E47;
+  --terra:#8B5E3C;--terra-l:#C4955A;
+  --creme:#F7F4EE;--creme-d:#EDE8DC;--branco:#FFFFFF;
+  --cinza:#6B7280;--cinza-l:#9CA3AF;
+  --txt:#1A2810;--txt-s:#3D4F2E;
+}
+body{font-family:'DM Sans',sans-serif;background:var(--creme);color:var(--txt);font-size:15px;line-height:1.6;scroll-behavior:smooth}
+nav{background:rgba(255,255,255,0.97);border-bottom:1px solid var(--creme-d);padding:0 2.5rem;display:flex;align-items:center;justify-content:space-between;height:66px;position:sticky;top:0;z-index:200}
+.logo{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--verde);font-weight:700;display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-icon{width:34px;height:34px;background:var(--verde);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.logo-icon svg{width:18px;height:18px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round}
+.nav-links{display:flex;gap:26px;align-items:center}
+.nav-links a{font-size:13px;color:var(--txt-s);text-decoration:none;font-weight:400;letter-spacing:.02em;transition:color .2s;cursor:pointer}
+.nav-links a:hover{color:var(--verde)}
+.nav-cta{background:var(--verde) !important;color:#fff !important;padding:9px 20px;border-radius:7px;font-size:13px;font-weight:500 !important}
+.nav-cta:hover{background:var(--verde-m) !important}
+
+.page{display:none}
+.page.active{display:block}
+
+/* ── HERO ── */
+.hero{position:relative;height:92vh;min-height:560px;overflow:hidden;display:flex;align-items:center}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg svg{width:100%;height:100%}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(15,30,8,.82) 0%,rgba(30,60,15,.65) 60%,rgba(45,80,22,.4) 100%);z-index:1}
+.hero-content{position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:0 2.5rem;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;width:100%}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:52px;line-height:1.1;font-weight:700;color:#fff;margin-bottom:20px}
+.hero p{color:rgba(255,255,255,.72);font-size:16px;margin-bottom:32px;line-height:1.75}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn-prim{background:var(--terra-l);color:#fff;padding:13px 28px;border-radius:7px;font-size:14px;font-weight:500;border:none;cursor:pointer;text-decoration:none;display:inline-block;transition:background .2s}
+.btn-prim:hover{background:var(--terra)}
+.btn-sec{background:transparent;color:#fff;padding:12px 28px;border-radius:7px;font-size:14px;font-weight:400;border:1.5px solid rgba(255,255,255,.4);cursor:pointer;text-decoration:none;display:inline-block;transition:all .2s}
+.btn-sec:hover{border-color:rgba(255,255,255,.8)}
+.hero-card{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:28px;backdrop-filter:blur(10px)}
+.hero-card-title{font-size:11px;letter-spacing:.15em;color:rgba(255,255,255,.5);text-transform:uppercase;margin-bottom:18px}
+.stat-row{display:flex;justify-content:space-between;gap:12px}
+.stat{text-align:center}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:36px;color:#fff;font-weight:700;line-height:1}
+.stat-label{font-size:11px;color:rgba(255,255,255,.5);margin-top:4px}
+.divider{width:1px;background:rgba(255,255,255,.15)}
+.section-label{font-size:11px;letter-spacing:.15em;color:var(--verde-l);text-transform:uppercase;font-weight:500;margin-bottom:12px}
+h2{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:700;color:var(--txt);margin-bottom:12px;line-height:1.15}
+h3{font-size:17px;font-weight:500;color:var(--txt);margin-bottom:8px}
+
+/* ── SERVIÇOS ── */
+.services-section{padding:80px 2.5rem;max-width:1100px;margin:0 auto}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+.serv-card{background:var(--branco);border:1px solid var(--creme-d);border-radius:12px;overflow:hidden;transition:box-shadow .25s;cursor:default}
+.serv-card:hover{box-shadow:0 6px 28px rgba(45,80,22,.1)}
+.serv-thumb{height:140px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.serv-body{padding:22px}
+.serv-icon-badge{position:absolute;bottom:12px;right:12px;width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center}
+.serv-icon-badge i{font-size:18px;color:var(--verde)}
+.serv-card p{font-size:13px;color:var(--cinza);line-height:1.65}
+.serv-tag{display:inline-block;margin-top:14px;font-size:12px;color:var(--verde-l);font-weight:500}
+
+/* ── QUEM SOMOS ── */
+.about-section{background:var(--creme-d);padding:80px 2.5rem}
+.about-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.about-visual{border-radius:14px;overflow:hidden;position:relative;height:380px}
+.about-visual svg{width:100%;height:100%}
+.about-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(15,30,8,.85),transparent);padding:24px}
+.about-overlay p{font-family:'Cormorant Garamond',serif;font-size:28px;color:#fff;font-weight:600;line-height:1.2}
+.about-overlay span{font-size:12px;color:rgba(255,255,255,.55)}
+.values{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
+.val{background:var(--branco);border-radius:8px;padding:14px 16px;display:flex;align-items:flex-start;gap:10px;border:1px solid var(--creme-d)}
+.val i{font-size:17px;color:var(--verde-m);margin-top:2px;flex-shrink:0}
+.val p{font-size:13px;color:var(--txt-s);margin:0}
+.team-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}
+.team-card{background:var(--branco);border-radius:10px;padding:16px;text-align:center;border:1px solid var(--creme-d)}
+.team-avatar{width:56px;height:56px;border-radius:50%;margin:0 auto 10px;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:#fff}
+.team-card h4{font-size:14px;font-weight:500;margin-bottom:2px}
+.team-card span{font-size:12px;color:var(--cinza-l)}
+
+/* ── LAUDO ── */
+.laudo-section{background:var(--verde);padding:80px 2.5rem}
+.laudo-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.laudo-section h2{color:#fff;font-family:'Cormorant Garamond',serif}
+.laudo-section .section-label{color:rgba(255,255,255,.5)}
+.laudo-section > .laudo-inner > div > p{color:rgba(255,255,255,.65)}
+.laudo-box{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:14px;padding:32px}
+.laudo-box label{display:block;font-size:12px;color:rgba(255,255,255,.5);margin-bottom:7px;letter-spacing:.04em}
+.laudo-box input{width:100%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:7px;padding:12px 14px;color:#fff;font-size:14px;font-family:'DM Sans',sans-serif;outline:none;margin-bottom:18px;transition:border .2s}
+.laudo-box input::placeholder{color:rgba(255,255,255,.3)}
+.laudo-box input:focus{border-color:rgba(255,255,255,.5)}
+.laudo-tabs{display:flex;gap:0;margin-bottom:22px;border-radius:7px;overflow:hidden;border:1px solid rgba(255,255,255,.2)}
+.laudo-tab{flex:1;padding:9px;font-size:13px;font-family:'DM Sans',sans-serif;border:none;background:transparent;color:rgba(255,255,255,.5);cursor:pointer;transition:all .2s}
+.laudo-tab.active{background:rgba(255,255,255,.15);color:#fff}
+.laudo-btn{width:100%;background:var(--terra-l);color:#fff;border:none;padding:13px;border-radius:7px;font-size:14px;font-weight:500;font-family:'DM Sans',sans-serif;cursor:pointer;transition:background .2s}
+.laudo-btn:hover{background:var(--terra)}
+.steps{display:flex;flex-direction:column;gap:18px;margin-top:28px}
+.step{display:flex;align-items:flex-start;gap:14px}
+.step-num{width:28px;height:28px;border-radius:50%;border:1.5px solid rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;font-size:12px;color:rgba(255,255,255,.6);flex-shrink:0}
+.step h4{font-size:14px;color:rgba(255,255,255,.9);font-weight:500;margin-bottom:2px}
+.step p{font-size:13px;color:rgba(255,255,255,.55);margin:0}
+
+/* ── BLOG ── */
+.blog-section{padding:80px 2.5rem;max-width:1100px;margin:0 auto}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px}
+.blog-card{background:var(--branco);border:1px solid var(--creme-d);border-radius:12px;overflow:hidden;cursor:default;transition:box-shadow .2s}
+.blog-card:hover{box-shadow:0 4px 20px rgba(45,80,22,.08)}
+.blog-thumb{height:160px;position:relative;overflow:hidden}
+.blog-thumb svg{width:100%;height:100%}
+.blog-body{padding:20px}
+.blog-cat{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--verde-l);font-weight:500;margin-bottom:8px}
+.blog-card h3{font-size:15px;line-height:1.45;margin-bottom:8px}
+.blog-card p{font-size:13px;line-height:1.65;color:var(--cinza)}
+.blog-meta{display:flex;align-items:center;gap:8px;margin-top:14px;padding-top:14px;border-top:1px solid var(--creme-d)}
+.blog-meta span{font-size:12px;color:var(--cinza-l)}
+.blog-dot{width:3px;height:3px;border-radius:50%;background:var(--creme-d)}
+
+/* ── CONTATO ── */
+.contato-section{padding:80px 2.5rem;max-width:1100px;margin:0 auto}
+.contato-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:48px}
+.form-group{margin-bottom:18px}
+.form-group label{display:block;font-size:12px;color:var(--cinza);margin-bottom:6px;letter-spacing:.04em}
+.form-group input,.form-group textarea,.form-group select{width:100%;background:var(--branco);border:1px solid var(--creme-d);border-radius:8px;padding:12px 14px;color:var(--txt);font-size:14px;font-family:'DM Sans',sans-serif;outline:none;transition:border .2s}
+.form-group input:focus,.form-group textarea:focus{border-color:var(--verde-l)}
+.form-group textarea{resize:vertical;min-height:120px}
+.submit-btn{background:var(--verde);color:#fff;border:none;padding:13px 32px;border-radius:7px;font-size:14px;font-weight:500;font-family:'DM Sans',sans-serif;cursor:pointer;transition:background .2s}
+.submit-btn:hover{background:var(--verde-m)}
+.contato-info{display:flex;flex-direction:column;gap:20px}
+.info-card{background:var(--branco);border:1px solid var(--creme-d);border-radius:12px;padding:22px;display:flex;gap:16px;align-items:flex-start}
+.info-icon{width:42px;height:42px;border-radius:9px;background:var(--creme);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.info-icon i{font-size:20px;color:var(--verde-m)}
+.info-card h4{font-size:14px;font-weight:500;margin-bottom:4px}
+.info-card p{font-size:13px;color:var(--cinza);margin:0}
+.map-box{border-radius:12px;overflow:hidden;border:1px solid var(--creme-d);height:180px;background:var(--creme-d);display:flex;align-items:center;justify-content:center;position:relative}
+.map-box svg{width:100%;height:100%}
+
+/* ── FOOTER ── */
+footer{background:var(--txt);padding:48px 2.5rem 28px}
+.footer-inner{max-width:1100px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.08)}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:20px;color:#fff;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.footer-dot{width:8px;height:8px;border-radius:50%;background:var(--verde-l)}
+.footer-desc{font-size:13px;color:rgba(255,255,255,.38);line-height:1.7;max-width:230px}
+.footer-col h4{font-size:11px;letter-spacing:.12em;color:rgba(255,255,255,.3);text-transform:uppercase;margin-bottom:14px;font-weight:500}
+.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,.5);text-decoration:none;margin-bottom:9px;transition:color .2s;cursor:pointer}
+.footer-col a:hover{color:#fff}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px}
+.footer-bottom p{font-size:12px;color:rgba(255,255,255,.22)}
+
+    
+</style>
+
+<nav>
+  <a class="logo" onclick="goTo('home')">
+    <div class="logo-icon">
+      <svg viewBox="0 0 24 24"><path d="M12 3C8 7 5 11 7 16c1.5 3.5 5 5 5 5s3.5-1.5 5-5c2-5-1-9-5-13z"/><path d="M12 8v13"/></svg>
+    </div>
+    AgroVerde Consultoria
+  </a>
+  <div class="nav-links">
+    <a onclick="goTo('sobre')">Quem somos</a>
+    <a onclick="goTo('servicos')">Serviços</a>
+    <a onclick="goTo('blog')">Artigos</a>
+    <a onclick="goTo('laudo')">Emitir laudo</a>
+    <a onclick="goTo('contato')" class="nav-cta">Fale conosco</a>
+  </div>
+</nav>
+
+<!-- HOME -->
+<div id="page-home" class="page active">
+  <div class="hero">
+    <div class="hero-bg">
+      <img
+        id="img-hero-bg"
+        src="https://agriq.com.br/wp-content/uploads/2024/07/Blog-AgriQ_Agricultura-regenerativa_Creditos-Shutterstock-scaled.webp"
+        alt="Campo agrícola ao amanhecer"
+        style="width:100%;height:100%;object-fit:cover;object-position:center"
+      />
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div>
+        <div class="section-label" style="color:rgba(255,255,255,.55)">Consultoria Rural Especializada</div>
+        <h1>Inteligência técnica para o campo</h1>
+        <p>Laudos, análises e assessoria agronômica para produtores rurais, investidores e empresas do agronegócio.</p>
+        <div class="hero-btns">
+          <a class="btn-prim" onclick="goTo('servicos')">Nossos serviços</a>
+          <a class="btn-sec" onclick="goTo('laudo')">Emitir laudo</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-title">Resultados em números</div>
+        <div class="stat-row">
+          <div class="stat"><div class="stat-num">1.200+</div><div class="stat-label">Laudos emitidos</div></div>
+          <div class="divider"></div>
+          <div class="stat"><div class="stat-num">18</div><div class="stat-label">Anos de atuação</div></div>
+          <div class="divider"></div>
+          <div class="stat"><div class="stat-num">340</div><div class="stat-label">Clientes ativos</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- prévia serviços na home -->
+  <div class="services-section">
+    <div class="section-label">O que oferecemos</div>
+    <h2>Serviços especializados</h2>
+    <p style="max-width:520px;color:var(--cinza)">Atuamos em todas as frentes da consultoria agronômica, com equipe técnica qualificada e metodologia própria.</p>
+    <div class="services-grid">
+      <div class="serv-card">
+        <div class="serv-thumb" style="background:linear-gradient(135deg,#2D5016,#4A7C2F)">
+          <img id="img-serv-laudos"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl7QEmqogddKjV12xddgAkuEBkg-kIdMd-GQ&s"
+            alt="Laudos técnicos agrícolas"
+            style="width:100%;height:100%;object-fit:cover"
+          />
+          <div class="serv-icon-badge"><i class="ti ti-file-certificate" aria-hidden="true"></i></div>
+        </div>
+        <div class="serv-body">
+          <h3>Laudos técnicos</h3>
+          <p>Laudos agronômicos, periciais e de avaliação para fins legais, comerciais e financeiros.</p>
+          <span class="serv-tag" onclick="goTo('servicos')" style="cursor:pointer">↗ Saiba mais</span>
+        </div>
+      </div>
+      <div class="serv-card">
+        <div class="serv-thumb" style="background:linear-gradient(135deg,#3d2410,#8B5E3C)">
+          <img id="img-serv-geo"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmLus_2k5_DYerXZ_JBknkC3xR-Cxs62V9uw&s"
+            alt="Georreferenciamento de propriedade rural"
+            style="width:100%;height:100%;object-fit:cover"
+          />
+          <div class="serv-icon-badge"><i class="ti ti-map-2" aria-hidden="true"></i></div>
+        </div>
+        <div class="serv-body">
+          <h3>Georreferenciamento</h3>
+          <p>Mapeamento de áreas rurais e regularização fundiária com tecnologia de precisão.</p>
+          <span class="serv-tag" onclick="goTo('servicos')" style="cursor:pointer">↗ Saiba mais</span>
+        </div>
+      </div>
+      <div class="serv-card">
+        <div class="serv-thumb" style="background:linear-gradient(135deg,#1A3A2A,#2D6B47)">
+          <img id="img-serv-aval"
+            src="https://britto.com.br/wp-content/uploads/2022/11/pericias-avaliacoes-imoveis-rurais-03.jpeg"
+            alt="Avaliação de imóvel rural"
+            style="width:100%;height:100%;object-fit:cover"
+          />
+          <div class="serv-icon-badge"><i class="ti ti-chart-line" aria-hidden="true"></i></div>
+        </div>
+        <div class="serv-body">
+          <h3>Avaliação de imóveis rurais</h3>
+          <p>Parecer técnico de valor de mercado de fazendas e propriedades rurais.</p>
+          <span class="serv-tag" onclick="goTo('servicos')" style="cursor:pointer">↗ Saiba mais</span>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:36px">
+      <button class="btn-prim" onclick="goTo('servicos')">Ver todos os serviços</button>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div><div class="footer-logo"><div class="footer-dot"></div>AgroVerde Consultoria</div><p class="footer-desc">Referência em consultoria agronômica e laudos técnicos rurais desde 2006.</p></div>
+        <div class="footer-col"><h4>Institucional</h4><a onclick="goTo('sobre')">Quem somos</a><a onclick="goTo('sobre')">Nossa equipe</a><a onclick="goTo('contato')">Contato</a></div>
+        <div class="footer-col"><h4>Serviços</h4><a onclick="goTo('servicos')">Laudos técnicos</a><a onclick="goTo('servicos')">Georreferenciamento</a><a onclick="goTo('servicos')">Avaliação rural</a></div>
+        <div class="footer-col"><h4>Acesso rápido</h4><a onclick="goTo('laudo')">Emitir laudo</a><a onclick="goTo('blog')">Artigos</a><a onclick="goTo('contato')">Fale conosco</a></div>
+      </div>
+      <div class="footer-bottom"><p>© 2025 AgroVerde Consultoria Rural. Todos os direitos reservados.</p><p>CREA-MT · CREA-GO · CREA-MS</p></div>
+    </div>
+  </footer>
+</div>
+
+<!-- QUEM SOMOS -->
+<div id="page-sobre" class="page">
+  <div style="background:var(--verde);padding:60px 2.5rem 50px">
+    <div style="max-width:1100px;margin:0 auto">
+      <div class="section-label" style="color:rgba(255,255,255,.5)">A empresa</div>
+      <h2 style="color:#fff;font-family:'Cormorant Garamond',serif">Quem somos</h2>
+    </div>
+  </div>
+  <div class="about-section" style="background:var(--creme)">
+    <div class="about-inner">
+      <div class="about-visual">
+        <img id="img-sobre-campo"
+          src="https://agriq.com.br/wp-content/uploads/2024/06/Blog-AgriQ_Tecnologia-na-agricultura_Creditos-Shutterstock-scaled.webp"
+          alt="18 anos de consultoria agronômica"
+          style="width:100%;height:100%;object-fit:cover"
+        />
+        <div class="about-overlay">
+          <p>18 anos transformando o campo</p>
+          <span>Centro-Oeste · Norte · Nordeste</span>
+        </div>
+      </div>
+      <div>
+        <div class="section-label">Nossa história</div>
+        <h2>Experiência que transforma o campo em resultado</h2>
+        <p style="color:var(--cinza);margin:16px 0 24px">Fundada em 2006, a AgroVerde é referência em consultoria rural no Centro-Oeste brasileiro. Nossa equipe reúne engenheiros agrônomos, geógrafos e especialistas em direito agrário comprometidos com a excelência técnica.</p>
+        <div class="values">
+          <div class="val"><i class="ti ti-check" aria-hidden="true"></i><p>Equipe multidisciplinar com CREA ativo</p></div>
+          <div class="val"><i class="ti ti-check" aria-hidden="true"></i><p>Atendimento em todo o território nacional</p></div>
+          <div class="val"><i class="ti ti-check" aria-hidden="true"></i><p>Laudos com validade jurídica garantida</p></div>
+          <div class="val"><i class="ti ti-check" aria-hidden="true"></i><p>Tecnologia e inovação no campo</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="padding:60px 2.5rem;max-width:1100px;margin:0 auto">
+    <div class="section-label">Time técnico</div>
+    <h2>Nossa equipe</h2>
+    <div class="team-row" style="margin-top:32px">
+      <div class="team-card"><div class="team-avatar" style="background:#2D5016">CR</div><h4>Carlos Rocha</h4><span>Eng. Agrônomo · CREA-MT</span></div>
+      <div class="team-card"><div class="team-avatar" style="background:#8B5E3C">AM</div><h4>Ana Medeiros</h4><span>Geógrafa · MSc. Solos</span></div>
+      <div class="team-card"><div class="team-avatar" style="background:#4A7C2F">FS</div><h4>Felipe Souza</h4><span>Eng. Florestal · CREA-GO</span></div>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div><div class="footer-logo"><div class="footer-dot"></div>AgroVerde Consultoria</div><p class="footer-desc">Referência em consultoria agronômica e laudos técnicos rurais desde 2006.</p></div>
+        <div class="footer-col"><h4>Institucional</h4><a onclick="goTo('sobre')">Quem somos</a><a onclick="goTo('contato')">Contato</a></div>
+        <div class="footer-col"><h4>Serviços</h4><a onclick="goTo('servicos')">Ver todos</a></div>
+        <div class="footer-col"><h4>Acesso rápido</h4><a onclick="goTo('laudo')">Emitir laudo</a><a onclick="goTo('blog')">Artigos</a></div>
+      </div>
+      <div class="footer-bottom"><p>© 2025 AgroVerde Consultoria Rural. Todos os direitos reservados.</p><p>CREA-MT · CREA-GO · CREA-MS</p></div>
+    </div>
+  </footer>
+</div>
+
+<!-- SERVIÇOS -->
+<div id="page-servicos" class="page">
+
+  <style>
+    :root{
+
+      --img-pserv-laudos:
+      url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl7QEmqogddKjV12xddgAkuEBkg-kIdMd-GQ&s");
+
+      --img-pserv-geo:
+      url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmLus_2k5_DYerXZ_JBknkC3xR-Cxs62V9uw&s");
+
+      --img-pserv-gestao:
+      url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVcEhDzkDwL7DcHI1iL1RpPfWK1Pu5Thmm1Q&s");
+
+      --img-pserv-aval:
+      url("https://britto.com.br/wp-content/uploads/2022/11/pericias-avaliacoes-imoveis-rurais-03.jpeg");
+
+      --img-pserv-agua:
+      url("https://www2.pasehidro.com.br/wp-content/uploads/2022/10/1-1.jpg");
+
+      --img-pserv-licenca:
+      url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTis-foZP5bWHOwOLAtoPNxTpfwjC_eFLOepw&s");
+    }
+
+    .serv-thumb{
+      height:140px;
+      position:relative;
+      overflow:hidden;
+      background-size:cover !important;
+      background-position:center !important;
+    }
+
+    .serv-thumb::after{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:linear-gradient(
+        to bottom,
+        rgba(0,0,0,.08),
+        rgba(0,0,0,.18)
+      );
+    }
+
+    .serv-icon-badge{
+      position:absolute;
+      right:12px;
+      bottom:12px;
+      z-index:2;
+    }
+  </style>
+
+  <div style="background:var(--verde);padding:60px 2.5rem 50px">
+    <div style="max-width:1100px;margin:0 auto">
+      <div class="section-label" style="color:rgba(255,255,255,.5)">
+        O que fazemos
+      </div>
+
+      <h2 style="color:#fff;font-family:'Cormorant Garamond',serif">
+        Nossos serviços
+      </h2>
+    </div>
+  </div>
+
+  <div class="services-section">
+    <div class="services-grid" style="margin-top:0">
+
+      <!-- CARD 1 -->
+      <div class="serv-card">
+
+        <div class="serv-thumb"
+        style="background-image:var(--img-pserv-laudos)">
+
+          <div class="serv-icon-badge">
+            <i class="ti ti-file-certificate" aria-hidden="true"></i>
+          </div>
+
+        </div>
+
+        <div class="serv-body">
+          <h3>Laudos técnicos</h3>
+
+          <p>
+            Elaboração de laudos agronômicos, periciais e
+            de avaliação para fins legais, comerciais e
+            financeiros. Válidos em todo território nacional.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="serv-card">
+
+        <div class="serv-thumb"
+        style="background-image:var(--img-pserv-geo)">
+
+          <div class="serv-icon-badge">
+            <i class="ti ti-map-2" aria-hidden="true"></i>
+          </div>
+
+        </div>
+
+        <div class="serv-body">
+          <h3>Georreferenciamento</h3>
+
+          <p>
+            Levantamentos topográficos, mapeamento de áreas
+            rurais e regularização fundiária com tecnologia
+            de ponta.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="serv-card">
+
+        <div class="serv-thumb"
+        style="background-image:var(--img-pserv-gestao)">
+
+          <div class="serv-icon-badge">
+            <i class="ti ti-plant-2" aria-hidden="true"></i>
+          </div>
+
+        </div>
+
+        <div class="serv-body">
+          <h3>Gestão agronômica</h3>
+
+          <p>
+            Planejamento de safras, análise de solo,
+            manejo integrado de pragas e acompanhamento
+            técnico contínuo.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="serv-card">
+
+        <div class="serv-thumb"
+        style="background-image:var(--img-pserv-aval)">
+
+          <div class="serv-icon-badge">
+            <i class="ti ti-chart-bar" aria-hidden="true"></i>
+          </div>
+
+        </div>
+
+        <div class="serv-body">
+          <h3>Avaliação de imóveis rurais</h3>
+
+          <p>
+            Parecer técnico de valor de mercado de fazendas,
+            sítios e propriedades para compra, venda ou
+            financiamento.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- CARD 5 -->
+      <div class="serv-card">
+
+        <div class="serv-thumb"
+        style="background-image:var(--img-pserv-agua)">
+
+          <div class="serv-icon-badge">
+            <i class="ti ti-droplet" aria-hidden="true"></i>
+          </div>
+
+        </div>
+
+        <div class="serv-body">
+          <h3>Recursos hídricos</h3>
+
+          <p>
+            Outorga de água, análise de irrigação e gestão
+            sustentável dos recursos hídricos da propriedade.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- CARD 6 -->
+      <div class="serv-card">
+
+        <div class="serv-thumb"
+        style="background-image:var(--img-pserv-licenca)">
+
+          <div class="serv-icon-badge">
+            <i class="ti ti-shield-check" aria-hidden="true"></i>
+          </div>
+
+        </div>
+
+        <div class="serv-body">
+          <h3>Licenciamento ambiental</h3>
+
+          <p>
+            Assessoria completa para obtenção de licenças
+            ambientais, CAR, RPPN e adequação à legislação
+            vigente.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+
+      <div class="footer-top">
+
+        <div>
+          <div class="footer-logo">
+            <div class="footer-dot"></div>
+            AgroVerde Consultoria
+          </div>
+
+          <p class="footer-desc">
+            Referência em consultoria agronômica e laudos
+            técnicos rurais desde 2006.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Institucional</h4>
+          <a onclick="goTo('sobre')">Quem somos</a>
+          <a onclick="goTo('contato')">Contato</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Serviços</h4>
+          <a onclick="goTo('servicos')">Ver todos</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Acesso rápido</h4>
+          <a onclick="goTo('laudo')">Emitir laudo</a>
+          <a onclick="goTo('blog')">Artigos</a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 AgroVerde Consultoria Rural.</p>
+        <p>CREA-MT · CREA-GO · CREA-MS</p>
+      </div>
+
+    </div>
+  </footer>
+</div>
+
+<!-- EMITIR LAUDO -->
+<div id="page-laudo" class="page">
+  <div class="laudo-section" style="min-height:100vh;align-items:flex-start;padding-top:80px">
+    <div class="laudo-inner">
+      <div>
+        <div class="section-label">Área do cliente</div>
+        <h2 style="font-family:'Cormorant Garamond',serif">Emissão de laudos</h2>
+        <p style="margin:14px 0 28px;color:rgba(255,255,255,.65)">Acesse e baixe seus documentos técnicos diretamente pelo portal. Informe o número de protocolo ou seu CPF para localizar o laudo.</p>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div><h4>Informe seus dados</h4><p>Digite o protocolo ou CPF cadastrado</p></div></div>
+          <div class="step"><div class="step-num">2</div><div><h4>Localize o documento</h4><p>O sistema busca automaticamente no banco de dados</p></div></div>
+          <div class="step"><div class="step-num">3</div><div><h4>Baixe o PDF</h4><p>Download imediato com autenticidade garantida</p></div></div>
+        </div>
+        <div style="margin-top:32px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:18px">
+          <div style="font-size:12px;color:rgba(255,255,255,.45);margin-bottom:6px">Precisa de ajuda?</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.7)">(65) 3321-0000 · contato@agroverde.com.br</div>
+        </div>
+      </div>
+      <div class="laudo-box">
+        <div class="laudo-tabs">
+          <button class="laudo-tab active" onclick="this.parentNode.querySelectorAll('.laudo-tab').forEach(t=>t.classList.remove('active'));this.classList.add('active');document.getElementById('campo-laudo').placeholder='Ex: AGRV-2024-00123';document.getElementById('label-laudo').textContent='Número do protocolo'">Por protocolo</button>
+          <button class="laudo-tab" onclick="this.parentNode.querySelectorAll('.laudo-tab').forEach(t=>t.classList.remove('active'));this.classList.add('active');document.getElementById('campo-laudo').placeholder='000.000.000-00';document.getElementById('label-laudo').textContent='CPF do solicitante'">Por CPF</button>
+        </div>
+        <label id="label-laudo">Número do protocolo</label>
+        <input id="campo-laudo" type="text" placeholder="Ex: AGRV-2024-00123"/>
+        <label>Código de verificação</label>
+        <input type="text" placeholder="Informado no e-mail de entrega"/>
+        <button class="laudo-btn" onclick="document.getElementById('laudo-result').style.display='block'">Buscar laudo</button>
+        <div id="laudo-result" style="display:none;margin-top:20px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:8px;padding:16px">
+          <div style="font-size:12px;color:rgba(255,255,255,.5);margin-bottom:6px">Laudo encontrado</div>
+          <div style="font-size:14px;color:#fff;font-weight:500;margin-bottom:4px">Laudo de Avaliação Rural — Fazenda Santa Rita</div>
+          <div style="font-size:12px;color:rgba(255,255,255,.5);margin-bottom:14px">Protocolo: AGRV-2024-00123 · Emitido em 10/04/2025</div>
+          <button class="laudo-btn" style="background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3)">↓ Baixar PDF</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BLOG -->
+<div id="page-blog" class="page">
+
+  <style>
+    :root{
+
+      /* URL, BASE64 ou caminho local */
+
+      --img-blog-1:
+      url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYBElO58OZBnKpqNopAC_kqRSj5kQSowE4bg&s");
+
+      --img-blog-2:
+      url("https://www.gov.br/incra/pt-br/assuntos/noticias/transacoes-com-imoveis-acima-de-25-hectares-exigem-georreferenciamento/geo_acre.jpg");
+
+      --img-blog-4:
+      url("https://dynamic-media-cdn.tripadvisor.com/media/photo-o/21/82/9b/17/muchas-verduras-y-frutas.jpg?w=900&h=500&s=1");
+
+      --img-blog-5:
+      url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjM7VMx1A6ysRRL2uowkxErWDLAxb0k8BtXw&s");
+
+      --img-blog-6:
+      url("https://midias-totvs.totvs.com/wp-content/uploads/2024/08/inovacao-e-tecnologia.jpg");
+    }
+
+    .blog-thumb{
+      height:160px;
+      background-size:cover !important;
+      background-position:center !important;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .blog-thumb::after{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:linear-gradient(
+        to bottom,
+        rgba(0,0,0,.05),
+        rgba(0,0,0,.18)
+      );
+    }
+  </style>
+
+  <div style="background:var(--verde);padding:60px 2.5rem 50px">
+    <div style="max-width:1100px;margin:0 auto">
+      <div class="section-label" style="color:rgba(255,255,255,.5)">
+        Conteúdo técnico
+      </div>
+
+      <h2 style="color:#fff;font-family:'Cormorant Garamond',serif">
+        Artigos e publicações
+      </h2>
+    </div>
+  </div>
+
+  <div class="blog-section" style="padding-top:60px">
+
+    <div class="blog-grid" style="margin-top:0">
+
+      <!-- CARD 1 -->
+      <div class="blog-card">
+
+        <div class="blog-thumb"
+        style="background-image:var(--img-blog-1)">
+        </div>
+
+        <div class="blog-body">
+          <div class="blog-cat">Legislação</div>
+
+          <h3>
+            Novas regras do CAR:
+            o que muda para o produtor em 2025
+          </h3>
+
+          <p>
+            Entenda as atualizações do Cadastro
+            Ambiental Rural e os impactos na
+            regularização das propriedades.
+          </p>
+
+          <div class="blog-meta">
+            <span>12 mai 2025</span>
+            <div class="blog-dot"></div>
+            <span>5 min de leitura</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="blog-card">
+
+        <div class="blog-thumb"
+        style="background-image:var(--img-blog-2)">
+        </div>
+
+        <div class="blog-body">
+          <div class="blog-cat">
+            Georreferenciamento
+          </div>
+
+          <h3>
+            Como o georreferenciamento protege
+            o patrimônio rural da sua família
+          </h3>
+
+          <p>
+            Regularizar os limites da propriedade
+            é essencial para evitar conflitos e
+            garantir financiamentos.
+          </p>
+
+          <div class="blog-meta">
+            <span>3 mai 2025</span>
+            <div class="blog-dot"></div>
+            <span>7 min de leitura</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="blog-card">
+
+        <div class="blog-thumb"
+        style="background-image:var(--img-blog-4)">
+        </div>
+
+        <div class="blog-body">
+          <div class="blog-cat">Mercado</div>
+
+          <h3>
+            Avaliação de terras agrícolas:
+            como o mercado se comportou em 2024
+          </h3>
+
+          <p>
+            Análise do comportamento do preço
+            da terra nas principais regiões
+            produtoras do Brasil.
+          </p>
+
+          <div class="blog-meta">
+            <span>15 abr 2025</span>
+            <div class="blog-dot"></div>
+            <span>6 min de leitura</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="blog-card">
+
+        <div class="blog-thumb"
+        style="background-image:var(--img-blog-5)">
+        </div>
+
+        <div class="blog-body">
+          <div class="blog-cat">
+            Sustentabilidade
+          </div>
+
+          <h3>
+            Crédito de carbono rural:
+            oportunidades para o produtor brasileiro
+          </h3>
+
+          <p>
+            Entenda como funciona o mercado
+            voluntário de carbono e como sua
+            propriedade pode participar.
+          </p>
+
+          <div class="blog-meta">
+            <span>8 abr 2025</span>
+            <div class="blog-dot"></div>
+            <span>9 min de leitura</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CARD 5 -->
+      <div class="blog-card">
+
+        <div class="blog-thumb"
+        style="background-image:var(--img-blog-6)">
+        </div>
+
+        <div class="blog-body">
+          <div class="blog-cat">
+            Tecnologia
+          </div>
+
+          <h3>
+            Drones no campo:
+            como o monitoramento aéreo
+            reduz custos operacionais
+          </h3>
+
+          <p>
+            Veja como a tecnologia de drones
+            agrícolas está mudando o diagnóstico
+            de lavouras no Brasil.
+          </p>
+
+          <div class="blog-meta">
+            <span>1 abr 2025</span>
+            <div class="blog-dot"></div>
+            <span>7 min de leitura</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+
+      <div class="footer-top">
+
+        <div>
+          <div class="footer-logo">
+            <div class="footer-dot"></div>
+            AgroVerde Consultoria
+          </div>
+
+          <p class="footer-desc">
+            Referência em consultoria agronômica
+            e laudos técnicos rurais desde 2006.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Institucional</h4>
+          <a onclick="goTo('sobre')">
+            Quem somos
+          </a>
+          <a onclick="goTo('contato')">
+            Contato
+          </a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Serviços</h4>
+          <a onclick="goTo('servicos')">
+            Ver todos
+          </a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Acesso rápido</h4>
+          <a onclick="goTo('laudo')">
+            Emitir laudo
+          </a>
+          <a onclick="goTo('blog')">
+            Artigos
+          </a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          © 2025 AgroVerde Consultoria Rural.
+        </p>
+
+        <p>
+          CREA-MT · CREA-GO · CREA-MS
+        </p>
+      </div>
+
+    </div>
+  </footer>
+</div>
+
+<!-- CONTATO -->
+<div id="page-contato" class="page">
+  <div style="background:var(--verde);padding:60px 2.5rem 50px">
+    <div style="max-width:1100px;margin:0 auto">
+      <div class="section-label" style="color:rgba(255,255,255,.5)">Fale conosco</div>
+      <h2 style="color:#fff;font-family:'Cormorant Garamond',serif">Entre em contato</h2>
+    </div>
+  </div>
+  <div class="contato-section">
+    <div class="contato-grid">
+      <div>
+        <div class="form-group"><label>Nome completo</label><input type="text" placeholder="Seu nome"/></div>
+        <div class="form-group"><label>E-mail</label><input type="email" placeholder="seu@email.com.br"/></div>
+        <div class="form-group"><label>Telefone</label><input type="text" placeholder="(65) 99999-0000"/></div>
+        <div class="form-group"><label>Assunto</label>
+          <select><option>Solicitação de laudo</option><option>Orçamento de serviço</option><option>Dúvida técnica</option><option>Outro</option></select>
+        </div>
+        <div class="form-group"><label>Mensagem</label><textarea placeholder="Descreva como podemos ajudar..."></textarea></div>
+        <button class="submit-btn" onclick="this.textContent='Mensagem enviada ✓';this.style.background='#4A7C2F'">Enviar mensagem</button>
+      </div>
+      <div class="contato-info">
+        <div class="info-card"><div class="info-icon"><i class="ti ti-phone" aria-hidden="true"></i></div><div><h4>Telefone</h4><p>(65) 3321-0000<br>(65) 99812-3456</p></div></div>
+        <div class="info-card"><div class="info-icon"><i class="ti ti-mail" aria-hidden="true"></i></div><div><h4>E-mail</h4><p>contato@agroverde.com.br<br>laudos@agroverde.com.br</p></div></div>
+        <div class="info-card"><div class="info-icon"><i class="ti ti-map-pin" aria-hidden="true"></i></div><div><h4>Endereço</h4><p>Av. do Trabalhador Rural, 1.450<br>Belém — PA, 78000-000</p></div></div>
+        <div class="info-card"><div class="info-icon"><i class="ti ti-clock" aria-hidden="true"></i></div><div><h4>Horário de atendimento</h4><p>Segunda a sexta, das 8h às 18h<br>Sábado, das 8h às 12h</p></div></div>
+        <div class="map-box">
+          <svg width="100%" height="100%" viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="180" fill="#e8e4dc"/>
+            <g stroke="#c8c0b0" fill="none">
+              <line x1="0" y1="60" x2="400" y2="60" stroke-width="8" stroke="#d4cfc5"/>
+              <line x1="0" y1="120" x2="400" y2="120" stroke-width="8" stroke="#d4cfc5"/>
+              <line x1="100" y1="0" x2="100" y2="180" stroke-width="6" stroke="#d4cfc5"/>
+              <line x1="250" y1="0" x2="250" y2="180" stroke-width="6" stroke="#d4cfc5"/>
+              <rect x="110" y="30" width="60" height="25" rx="3" fill="#c8c0b0"/>
+              <rect x="260" y="70" width="50" height="20" rx="3" fill="#c8c0b0"/>
+              <rect x="20" y="70" width="70" height="30" rx="3" fill="#c8c0b0"/>
+            </g>
+            <circle cx="200" cy="90" r="12" fill="#2D5016"/>
+            <circle cx="200" cy="90" r="6" fill="#fff"/>
+            <text x="200" y="155" text-anchor="middle" fill="#888" font-size="11" font-family="DM Sans,sans-serif">Cuiabá — MT</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div><div class="footer-logo"><div class="footer-dot"></div>AgroVerde Consultoria</div><p class="footer-desc">Referência em consultoria agronômica e laudos técnicos rurais desde 2006.</p></div>
+        <div class="footer-col"><h4>Institucional</h4><a onclick="goTo('sobre')">Quem somos</a><a onclick="goTo('contato')">Contato</a></div>
+        <div class="footer-col"><h4>Serviços</h4><a onclick="goTo('servicos')">Ver todos</a></div>
+        <div class="footer-col"><h4>Acesso rápido</h4><a onclick="goTo('laudo')">Emitir laudo</a><a onclick="goTo('blog')">Artigos</a></div>
+      </div>
+      <div class="footer-bottom"><p>© 2025 AgroVerde Consultoria Rural.</p><p>CREA-MT · CREA-GO · CREA-MS</p></div>
+    </div>
+  </footer>
+</div>
+
+<script>
+function goTo(page){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page-'+page).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
