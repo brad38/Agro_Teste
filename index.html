@@ -139,7 +139,7 @@ h3{font-size:17px;font-weight:500;color:var(--txt);margin-bottom:8px}
 footer{background:var(--txt);padding:48px 2.5rem 28px}
 .footer-inner{max-width:1100px;margin:0 auto}
 .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.08)}
-.footer-logo{font-family:'Cormorant Garamond',serif;font-size:20px;color:#fff;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:18px;color:#fff;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px}
 .footer-dot{width:8px;height:8px;border-radius:50%;background:var(--verde-l)}
 .footer-desc{font-size:13px;color:rgba(255,255,255,.38);line-height:1.7;max-width:230px}
 .footer-col h4{font-size:11px;letter-spacing:.12em;color:rgba(255,255,255,.3);text-transform:uppercase;margin-bottom:14px;font-weight:500}
@@ -187,7 +187,7 @@ footer{background:var(--txt);padding:48px 2.5rem 28px}
 /* MOBILE */
 @media(max-width:768px){
   nav{padding:0 1.2rem;height:58px;overflow:visible}
-  .logo{font-size:16px}
+  .logo{font-size:14px}
   .nav-links{display:none !important}
   .nav-links.open{display:flex !important;flex-direction:column;position:fixed;top:58px;left:0;right:0;background:rgba(255,255,255,.98);border-bottom:1px solid var(--creme-d);padding:16px 1.2rem 20px;gap:0;z-index:199;box-shadow:0 8px 24px rgba(0,0,0,.08)}
   .nav-links.open a{padding:13px 0;border-bottom:1px solid var(--creme-d);font-size:15px;color:var(--txt-s)}
@@ -309,7 +309,7 @@ footer{background:var(--txt);padding:48px 2.5rem 28px}
     <div class="logo-icon">
       <svg viewBox="0 0 24 24"><path d="M12 3C8 7 5 11 7 16c1.5 3.5 5 5 5 5s3.5-1.5 5-5c2-5-1-9-5-13z"/><path d="M12 8v13"/></svg>
     </div>
-    Visão Consultoria
+    Visão Consultoria &amp; Gestão de Projetos
   </a>
   <div class="nav-links" id="nav-links">
     <a onclick="goTo('sobre');closeNav()">Quem somos</a>
@@ -333,7 +333,7 @@ footer{background:var(--txt);padding:48px 2.5rem 28px}
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <div>
-        <div class="section-label" style="color:rgba(255,255,255,.55)">Consultoria & Gestão de Projetos</div>
+        <div class="section-label" style="color:rgba(255,255,255,.55)">Consultoria &amp; Gestão de Projetos</div>
         <h1>Inteligência técnica para o campo</h1>
         <p>Laudos, análises e assessoria agronômica para produtores rurais, investidores e empresas do agronegócio.</p>
         <div class="hero-btns">
@@ -398,7 +398,6 @@ footer{background:var(--txt);padding:48px 2.5rem 28px}
     </div>
   </div>
 
-
   <!-- GALERIA NA HOME — ÁLBUNS -->
   <div class="home-galeria" id="home-galeria-section" style="display:none">
     <div class="home-galeria-inner">
@@ -409,18 +408,15 @@ footer{background:var(--txt);padding:48px 2.5rem 28px}
         </div>
         <button class="home-galeria-ver-mais" onclick="goTo('galeria')">Ver todos os álbuns ↗</button>
       </div>
-      <div class="album-grid" id="home-album-grid">
-        <!-- preenchido por JS -->
-      </div>
+      <div class="album-grid" id="home-album-grid"></div>
     </div>
   </div>
 
   <footer>
-
     <div class="footer-inner">
       <div class="footer-top">
         <div>
-          <div class="footer-logo"><div class="footer-dot"></div>Visão Consultoria &amp; Gestão</div>
+          <div class="footer-logo"><div class="footer-dot"></div>Visão Consultoria &amp; Gestão de Projetos</div>
           <p class="footer-desc">Referência em consultoria agronômica e gestão de projetos rurais.</p>
         </div>
         <div class="footer-col">
@@ -471,7 +467,7 @@ footer{background:var(--txt);padding:48px 2.5rem 28px}
       <div>
         <div class="section-label">Nossa história</div>
         <h2>Experiência que transforma o campo em resultado</h2>
-        <p style="color:var(--cinza);margin:16px 0 24px">Fundada em 2006, a Visão Consultoria & Gestão de Projetos é referência em consultoria rural no Centro-Oeste brasileiro. Nossa equipe reúne engenheiros agrônomos, geógrafos e especialistas em direito agrário comprometidos com a excelência técnica.</p>
+        <p style="color:var(--cinza);margin:16px 0 24px">Fundada em 2006, a Visão Consultoria &amp; Gestão de Projetos é referência em consultoria rural no Centro-Oeste brasileiro. Nossa equipe reúne engenheiros agrônomos, geógrafos e especialistas em direito agrário comprometidos com a excelência técnica.</p>
         <div class="values">
           <div class="val"><i class="ti ti-check"></i><p>Equipe multidisciplinar com CREA ativo</p></div>
           <div class="val"><i class="ti ti-check"></i><p>Atendimento em todo o território nacional</p></div>
@@ -491,11 +487,10 @@ footer{background:var(--txt);padding:48px 2.5rem 28px}
     </div>
   </div>
   <footer>
-
     <div class="footer-inner">
       <div class="footer-top">
         <div>
-          <div class="footer-logo"><div class="footer-dot"></div>Visão Consultoria &amp; Gestão</div>
+          <div class="footer-logo"><div class="footer-dot"></div>Visão Consultoria &amp; Gestão de Projetos</div>
           <p class="footer-desc">Referência em consultoria agronômica e gestão de projetos rurais.</p>
         </div>
         <div class="footer-col">
@@ -575,11 +570,10 @@ footer{background:var(--txt);padding:48px 2.5rem 28px}
     </div>
   </div>
   <footer>
-
     <div class="footer-inner">
       <div class="footer-top">
         <div>
-          <div class="footer-logo"><div class="footer-dot"></div>Visão Consultoria &amp; Gestão</div>
+          <div class="footer-logo"><div class="footer-dot"></div>Visão Consultoria &amp; Gestão de Projetos</div>
           <p class="footer-desc">Referência em consultoria agronômica e gestão de projetos rurais.</p>
         </div>
         <div class="footer-col">
@@ -647,11 +641,10 @@ footer{background:var(--txt);padding:48px 2.5rem 28px}
     </div>
   </div>
   <footer>
-
     <div class="footer-inner">
       <div class="footer-top">
         <div>
-          <div class="footer-logo"><div class="footer-dot"></div>Visão Consultoria &amp; Gestão</div>
+          <div class="footer-logo"><div class="footer-dot"></div>Visão Consultoria &amp; Gestão de Projetos</div>
           <p class="footer-desc">Referência em consultoria agronômica e gestão de projetos rurais.</p>
         </div>
         <div class="footer-col">
@@ -719,11 +712,10 @@ footer{background:var(--txt);padding:48px 2.5rem 28px}
     </div>
   </div>
   <footer>
-
     <div class="footer-inner">
       <div class="footer-top">
         <div>
-          <div class="footer-logo"><div class="footer-dot"></div>Visão Consultoria &amp; Gestão</div>
+          <div class="footer-logo"><div class="footer-dot"></div>Visão Consultoria &amp; Gestão de Projetos</div>
           <p class="footer-desc">Referência em consultoria agronômica e gestão de projetos rurais.</p>
         </div>
         <div class="footer-col">
@@ -791,11 +783,10 @@ footer{background:var(--txt);padding:48px 2.5rem 28px}
     </div>
   </div>
   <footer>
-
     <div class="footer-inner">
       <div class="footer-top">
         <div>
-          <div class="footer-logo"><div class="footer-dot"></div>Visão Consultoria &amp; Gestão</div>
+          <div class="footer-logo"><div class="footer-dot"></div>Visão Consultoria &amp; Gestão de Projetos</div>
           <p class="footer-desc">Referência em consultoria agronômica e gestão de projetos rurais.</p>
         </div>
         <div class="footer-col">
@@ -862,11 +853,10 @@ footer{background:var(--txt);padding:48px 2.5rem 28px}
     </div>
   </div>
   <footer>
-
     <div class="footer-inner">
       <div class="footer-top">
         <div>
-          <div class="footer-logo"><div class="footer-dot"></div>Visão Consultoria &amp; Gestão</div>
+          <div class="footer-logo"><div class="footer-dot"></div>Visão Consultoria &amp; Gestão de Projetos</div>
           <p class="footer-desc">Referência em consultoria agronômica e gestão de projetos rurais.</p>
         </div>
         <div class="footer-col">
@@ -933,11 +923,10 @@ footer{background:var(--txt);padding:48px 2.5rem 28px}
     </div>
   </div>
   <footer>
-
     <div class="footer-inner">
       <div class="footer-top">
         <div>
-          <div class="footer-logo"><div class="footer-dot"></div>Visão Consultoria &amp; Gestão</div>
+          <div class="footer-logo"><div class="footer-dot"></div>Visão Consultoria &amp; Gestão de Projetos</div>
           <p class="footer-desc">Referência em consultoria agronômica e gestão de projetos rurais.</p>
         </div>
         <div class="footer-col">
@@ -1005,11 +994,10 @@ footer{background:var(--txt);padding:48px 2.5rem 28px}
     </div>
   </div>
   <footer>
-
     <div class="footer-inner">
       <div class="footer-top">
         <div>
-          <div class="footer-logo"><div class="footer-dot"></div>Visão Consultoria &amp; Gestão</div>
+          <div class="footer-logo"><div class="footer-dot"></div>Visão Consultoria &amp; Gestão de Projetos</div>
           <p class="footer-desc">Referência em consultoria agronômica e gestão de projetos rurais.</p>
         </div>
         <div class="footer-col">
@@ -1050,7 +1038,6 @@ footer{background:var(--txt);padding:48px 2.5rem 28px}
     </div>
   </div>
 
-  <!-- ADMIN: criar novo álbum -->
   <div class="galeria-admin" style="padding-top:48px">
     <div class="album-form">
       <div class="album-form-title"><i class="ti ti-folder-plus"></i> Adicionar novo álbum</div>
@@ -1076,32 +1063,25 @@ footer{background:var(--txt);padding:48px 2.5rem 28px}
         <button onclick="cancelarAlbum()" style="margin-left:12px;background:none;border:none;font-size:13px;color:var(--cinza);cursor:pointer;font-family:'DM Sans',sans-serif">Cancelar</button>
       </div>
     </div>
-
-    <!-- Lista de álbuns existentes (admin) -->
     <div id="albuns-admin-lista"></div>
   </div>
 
-  <!-- Grade pública de álbuns -->
   <div style="max-width:1100px;margin:0 auto;padding:0 2.5rem 80px">
     <div class="section-label" style="margin-bottom:12px">Portfólio</div>
     <h2 style="margin-bottom:28px">Projetos e visitas técnicas</h2>
-    <div class="album-grid" id="galeria-album-grid">
-      <!-- preenchido por JS -->
-    </div>
+    <div class="album-grid" id="galeria-album-grid"></div>
   </div>
 
-  <!-- Modal lightbox foto -->
   <div class="galeria-modal" id="galeria-modal" onclick="fecharModal()">
     <button class="galeria-modal-close" onclick="fecharModal()"><i class="ti ti-x"></i></button>
     <img id="galeria-modal-img" src="" alt=""/>
   </div>
 
   <footer>
-
     <div class="footer-inner">
       <div class="footer-top">
         <div>
-          <div class="footer-logo"><div class="footer-dot"></div>Visão Consultoria &amp; Gestão</div>
+          <div class="footer-logo"><div class="footer-dot"></div>Visão Consultoria &amp; Gestão de Projetos</div>
           <p class="footer-desc">Referência em consultoria agronômica e gestão de projetos rurais.</p>
         </div>
         <div class="footer-col">
@@ -1142,16 +1122,13 @@ footer{background:var(--txt);padding:48px 2.5rem 28px}
     </div>
   </div>
   <div class="album-page-fotos">
-    <div class="album-fotos-grid" id="album-fotos-grid">
-      <!-- preenchido por JS -->
-    </div>
+    <div class="album-fotos-grid" id="album-fotos-grid"></div>
   </div>
   <footer>
-
     <div class="footer-inner">
       <div class="footer-top">
         <div>
-          <div class="footer-logo"><div class="footer-dot"></div>Visão Consultoria &amp; Gestão</div>
+          <div class="footer-logo"><div class="footer-dot"></div>Visão Consultoria &amp; Gestão de Projetos</div>
           <p class="footer-desc">Referência em consultoria agronômica e gestão de projetos rurais.</p>
         </div>
         <div class="footer-col">
@@ -1220,11 +1197,10 @@ footer{background:var(--txt);padding:48px 2.5rem 28px}
     </div>
   </div>
   <footer>
-
     <div class="footer-inner">
       <div class="footer-top">
         <div>
-          <div class="footer-logo"><div class="footer-dot"></div>Visão Consultoria &amp; Gestão</div>
+          <div class="footer-logo"><div class="footer-dot"></div>Visão Consultoria &amp; Gestão de Projetos</div>
           <p class="footer-desc">Referência em consultoria agronômica e gestão de projetos rurais.</p>
         </div>
         <div class="footer-col">
@@ -1288,11 +1264,10 @@ footer{background:var(--txt);padding:48px 2.5rem 28px}
     </div>
   </div>
   <footer>
-
     <div class="footer-inner">
       <div class="footer-top">
         <div>
-          <div class="footer-logo"><div class="footer-dot"></div>Visão Consultoria &amp; Gestão</div>
+          <div class="footer-logo"><div class="footer-dot"></div>Visão Consultoria &amp; Gestão de Projetos</div>
           <p class="footer-desc">Referência em consultoria agronômica e gestão de projetos rurais.</p>
         </div>
         <div class="footer-col">
@@ -1369,11 +1344,10 @@ footer{background:var(--txt);padding:48px 2.5rem 28px}
     </div>
   </div>
   <footer>
-
     <div class="footer-inner">
       <div class="footer-top">
         <div>
-          <div class="footer-logo"><div class="footer-dot"></div>Visão Consultoria &amp; Gestão</div>
+          <div class="footer-logo"><div class="footer-dot"></div>Visão Consultoria &amp; Gestão de Projetos</div>
           <p class="footer-desc">Referência em consultoria agronômica e gestão de projetos rurais.</p>
         </div>
         <div class="footer-col">
@@ -1405,7 +1379,6 @@ footer{background:var(--txt);padding:48px 2.5rem 28px}
 </div>
 
 <script>
-// ── Navegação ──────────────────────────────────────
 function goTo(page){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.getElementById('page-'+page).classList.add('active');
@@ -1416,9 +1389,9 @@ function goToEquipe(){
   document.getElementById('page-sobre').classList.add('active');
   window.scrollTo({top:0,behavior:'instant'});
   setTimeout(function(){
-    var el = document.getElementById('secao-equipe');
-    if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
-  }, 50);
+    var el=document.getElementById('secao-equipe');
+    if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+  },50);
 }
 function goToServ(serv){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
@@ -1441,190 +1414,124 @@ function initHamburger(){
 window.addEventListener('resize',initHamburger);
 initHamburger();
 
-// ── Sistema de Álbuns ──────────────────────────────
-var albuns = [];                 // [{id, titulo, data, fotos:[{src,label}]}]
-var albumAberto = null;          // idx do álbum sendo visualizado
-var fotosNovoAlbum = [];         // fotos em memória antes de salvar
+var albuns=[];
+var albumAberto=null;
+var fotosNovoAlbum=[];
 
 function carregarAlbuns(){
-  try {
-    var s = localStorage.getItem('visao_galeria_albuns');
-    if(s) albuns = JSON.parse(s);
-  } catch(e){ albuns = []; }
+  try{var s=localStorage.getItem('visao_galeria_albuns');if(s)albuns=JSON.parse(s);}catch(e){albuns=[];}
 }
 function salvarAlbuns(){
-  try {
-    localStorage.setItem('visao_galeria_albuns', JSON.stringify(albuns));
-  } catch(e){
-    alert('Armazenamento cheio. Remova álbuns antigos ou reduza o tamanho das fotos.');
-  }
+  try{localStorage.setItem('visao_galeria_albuns',JSON.stringify(albuns));}
+  catch(e){alert('Armazenamento cheio. Remova álbuns antigos ou reduza o tamanho das fotos.');}
 }
-
-// ── Formatar data ──────────────────────────────────
 function formatarData(iso){
-  if(!iso) return '';
-  var p = iso.split('-');
-  var meses = ['JAN','FEV','MAR','ABR','MAI','JUN','JUL','AGO','SET','OUT','NOV','DEZ'];
+  if(!iso)return'';
+  var p=iso.split('-');
+  var meses=['JAN','FEV','MAR','ABR','MAI','JUN','JUL','AGO','SET','OUT','NOV','DEZ'];
   return p[2]+'/'+meses[parseInt(p[1],10)-1]+'/'+p[0].slice(2);
 }
-
-// ── Render grade de álbuns (galeria pública) ───────
 function renderGaleriaAlbuns(){
-  var grid = document.getElementById('galeria-album-grid');
-  if(!grid) return;
-  grid.innerHTML = '';
-  if(albuns.length === 0){
-    grid.innerHTML = '<div class="galeria-vazia"><i class="ti ti-camera"></i>Nenhum álbum adicionado ainda.</div>';
-    return;
-  }
-  albuns.forEach(function(alb, idx){
-    var capa = alb.fotos[0] ? alb.fotos[0].src : '';
-    var card = document.createElement('div');
-    card.className = 'album-card';
-    card.innerHTML =
-      '<div class="album-cover">' +
-        (capa ? '<img src="'+capa+'" alt="'+alb.titulo+'"/>' : '<div style="width:100%;height:100%;background:var(--creme-d)"></div>') +
-        '<div class="album-cover-overlay"></div>' +
-        '<div class="album-count"><i class="ti ti-photo"></i> '+alb.fotos.length+'</div>' +
-      '</div>' +
-      '<div class="album-body">' +
-        (alb.data ? '<div class="album-date">'+formatarData(alb.data)+'</div>' : '') +
-        '<p class="album-title">'+alb.titulo+'</p>' +
-        '<div class="album-title-link">↗ Ver fotos</div>' +
-      '</div>';
-    card.onclick = function(){ abrirAlbum(idx); };
+  var grid=document.getElementById('galeria-album-grid');
+  if(!grid)return;
+  grid.innerHTML='';
+  if(albuns.length===0){grid.innerHTML='<div class="galeria-vazia"><i class="ti ti-camera"></i>Nenhum álbum adicionado ainda.</div>';return;}
+  albuns.forEach(function(alb,idx){
+    var capa=alb.fotos[0]?alb.fotos[0].src:'';
+    var card=document.createElement('div');
+    card.className='album-card';
+    card.innerHTML='<div class="album-cover">'+(capa?'<img src="'+capa+'" alt="'+alb.titulo+'"/>':'<div style="width:100%;height:100%;background:var(--creme-d)"></div>')+'<div class="album-cover-overlay"></div><div class="album-count"><i class="ti ti-photo"></i> '+alb.fotos.length+'</div></div><div class="album-body">'+(alb.data?'<div class="album-date">'+formatarData(alb.data)+'</div>':'')+'<p class="album-title">'+alb.titulo+'</p><div class="album-title-link">↗ Ver fotos</div></div>';
+    card.onclick=function(){abrirAlbum(idx);};
     grid.appendChild(card);
   });
   renderAdminLista();
 }
-
-// ── Render álbuns na HOME (até 3) ─────────────────
 function renderHomeAlbuns(){
-  var section = document.getElementById('home-galeria-section');
-  var grid = document.getElementById('home-album-grid');
-  if(!grid) return;
-  grid.innerHTML = '';
-  if(albuns.length === 0){
-    if(section) section.style.display = 'none';
-    return;
-  }
-  if(section) section.style.display = '';
-  var exibir = albuns.slice(0, 3);
-  exibir.forEach(function(alb, idx){
-    var capa = alb.fotos[0] ? alb.fotos[0].src : '';
-    var card = document.createElement('div');
-    card.className = 'album-card';
-    card.innerHTML =
-      '<div class="album-cover">' +
-        (capa ? '<img src="'+capa+'" alt="'+alb.titulo+'"/>' : '') +
-        '<div class="album-cover-overlay"></div>' +
-        '<div class="album-count"><i class="ti ti-photo"></i> '+alb.fotos.length+'</div>' +
-      '</div>' +
-      '<div class="album-body">' +
-        (alb.data ? '<div class="album-date">'+formatarData(alb.data)+'</div>' : '') +
-        '<p class="album-title">'+alb.titulo+'</p>' +
-        '<div class="album-title-link">↗ Ver fotos</div>' +
-      '</div>';
-    card.onclick = function(){ abrirAlbum(idx); };
+  var section=document.getElementById('home-galeria-section');
+  var grid=document.getElementById('home-album-grid');
+  if(!grid)return;
+  grid.innerHTML='';
+  if(albuns.length===0){if(section)section.style.display='none';return;}
+  if(section)section.style.display='';
+  albuns.slice(0,3).forEach(function(alb,idx){
+    var capa=alb.fotos[0]?alb.fotos[0].src:'';
+    var card=document.createElement('div');
+    card.className='album-card';
+    card.innerHTML='<div class="album-cover">'+(capa?'<img src="'+capa+'" alt="'+alb.titulo+'"/>':'')+'<div class="album-cover-overlay"></div><div class="album-count"><i class="ti ti-photo"></i> '+alb.fotos.length+'</div></div><div class="album-body">'+(alb.data?'<div class="album-date">'+formatarData(alb.data)+'</div>':'')+'<p class="album-title">'+alb.titulo+'</p><div class="album-title-link">↗ Ver fotos</div></div>';
+    card.onclick=function(){abrirAlbum(idx);};
     grid.appendChild(card);
   });
 }
-
-// ── Abrir álbum individual ─────────────────────────
 function abrirAlbum(idx){
-  albumAberto = idx;
-  var alb = albuns[idx];
-  document.getElementById('album-titulo-display').textContent = alb.titulo;
-  document.getElementById('album-meta-display').textContent =
-    (alb.data ? formatarData(alb.data) + ' · ' : '') + alb.fotos.length + ' foto' + (alb.fotos.length !== 1 ? 's' : '');
-  var grid = document.getElementById('album-fotos-grid');
-  grid.innerHTML = '';
-  alb.fotos.forEach(function(foto, fi){
-    var item = document.createElement('div');
-    item.className = 'album-foto-item';
-    item.innerHTML = '<img src="'+foto.src+'" alt="'+(foto.label||'')+'">';
-    item.onclick = function(){ abrirModal(foto.src); };
+  albumAberto=idx;
+  var alb=albuns[idx];
+  document.getElementById('album-titulo-display').textContent=alb.titulo;
+  document.getElementById('album-meta-display').textContent=(alb.data?formatarData(alb.data)+' · ':'')+alb.fotos.length+' foto'+(alb.fotos.length!==1?'s':'');
+  var grid=document.getElementById('album-fotos-grid');
+  grid.innerHTML='';
+  alb.fotos.forEach(function(foto){
+    var item=document.createElement('div');
+    item.className='album-foto-item';
+    item.innerHTML='<img src="'+foto.src+'" alt="'+(foto.label||'')+'">';
+    item.onclick=function(){abrirModal(foto.src);};
     grid.appendChild(item);
   });
   goTo('album');
 }
-
-// ── Admin: preview de fotos antes de salvar ────────
 function previewAlbumFotos(input){
-  var files = Array.from(input.files);
-  fotosNovoAlbum = [];
-  var preview = document.getElementById('album-fotos-preview');
-  preview.innerHTML = '';
-  var remaining = files.length;
-  if(!remaining) return;
-  files.forEach(function(file, fi){
-    var reader = new FileReader();
-    reader.onload = function(e){
-      fotosNovoAlbum.push({src: e.target.result, label:''});
-      var item = document.createElement('div');
-      item.className = 'foto-preview-item';
-      item.innerHTML = '<img src="'+e.target.result+'"><button onclick="removerPreview('+fi+',this.parentNode)">×</button>';
+  var files=Array.from(input.files);
+  fotosNovoAlbum=[];
+  var preview=document.getElementById('album-fotos-preview');
+  preview.innerHTML='';
+  files.forEach(function(file,fi){
+    var reader=new FileReader();
+    reader.onload=function(e){
+      fotosNovoAlbum.push({src:e.target.result,label:''});
+      var item=document.createElement('div');
+      item.className='foto-preview-item';
+      item.innerHTML='<img src="'+e.target.result+'"><button onclick="removerPreview('+fi+',this.parentNode)">×</button>';
       preview.appendChild(item);
     };
     reader.readAsDataURL(file);
   });
-  input.value = '';
+  input.value='';
 }
-function removerPreview(fi, el){
-  fotosNovoAlbum.splice(fi, 1);
-  el.remove();
-}
-
-// ── Admin: salvar álbum ────────────────────────────
+function removerPreview(fi,el){fotosNovoAlbum.splice(fi,1);el.remove();}
 function salvarAlbum(){
-  var titulo = document.getElementById('album-titulo').value.trim();
-  var data = document.getElementById('album-data').value;
-  if(!titulo){ alert('Informe o título do evento.'); return; }
-  if(fotosNovoAlbum.length === 0){ alert('Adicione pelo menos uma foto.'); return; }
-  var id = Date.now().toString(36);
-  albuns.unshift({id:id, titulo:titulo, data:data, fotos:fotosNovoAlbum.slice()});
-  salvarAlbuns();
-  renderGaleriaAlbuns();
-  renderHomeAlbuns();
-  cancelarAlbum();
+  var titulo=document.getElementById('album-titulo').value.trim();
+  var data=document.getElementById('album-data').value;
+  if(!titulo){alert('Informe o título do evento.');return;}
+  if(fotosNovoAlbum.length===0){alert('Adicione pelo menos uma foto.');return;}
+  albuns.unshift({id:Date.now().toString(36),titulo:titulo,data:data,fotos:fotosNovoAlbum.slice()});
+  salvarAlbuns();renderGaleriaAlbuns();renderHomeAlbuns();cancelarAlbum();
 }
 function cancelarAlbum(){
-  document.getElementById('album-titulo').value = '';
-  document.getElementById('album-data').value = '';
-  document.getElementById('album-fotos-preview').innerHTML = '';
-  document.getElementById('album-file-input').value = '';
-  fotosNovoAlbum = [];
+  document.getElementById('album-titulo').value='';
+  document.getElementById('album-data').value='';
+  document.getElementById('album-fotos-preview').innerHTML='';
+  document.getElementById('album-file-input').value='';
+  fotosNovoAlbum=[];
 }
-
-// ── Admin: lista de álbuns com deletar ─────────────
 function renderAdminLista(){
-  var lista = document.getElementById('albuns-admin-lista');
-  if(!lista) return;
-  if(albuns.length === 0){ lista.innerHTML = ''; return; }
-  lista.innerHTML = '<div class="section-label" style="margin-bottom:14px">Álbuns cadastrados</div><div class="albuns-lista" id="albuns-lista-items"></div>';
-  var cont = document.getElementById('albuns-lista-items');
-  albuns.forEach(function(alb, idx){
-    var thumb = alb.fotos[0] ? '<img src="'+alb.fotos[0].src+'" alt="">' : '';
-    var card = document.createElement('div');
-    card.className = 'album-admin-card';
-    card.innerHTML =
-      '<div class="album-admin-thumb">'+thumb+'</div>'+
-      '<div class="album-admin-info"><h4>'+alb.titulo+'</h4><span>'+(alb.data?formatarData(alb.data)+' · ':'')+alb.fotos.length+' foto(s)</span></div>'+
-      '<button class="album-admin-del" onclick="deletarAlbum('+idx+')"><i class="ti ti-trash"></i> Excluir</button>';
+  var lista=document.getElementById('albuns-admin-lista');
+  if(!lista)return;
+  if(albuns.length===0){lista.innerHTML='';return;}
+  lista.innerHTML='<div class="section-label" style="margin-bottom:14px">Álbuns cadastrados</div><div class="albuns-lista" id="albuns-lista-items"></div>';
+  var cont=document.getElementById('albuns-lista-items');
+  albuns.forEach(function(alb,idx){
+    var thumb=alb.fotos[0]?'<img src="'+alb.fotos[0].src+'" alt="">':'';
+    var card=document.createElement('div');
+    card.className='album-admin-card';
+    card.innerHTML='<div class="album-admin-thumb">'+thumb+'</div><div class="album-admin-info"><h4>'+alb.titulo+'</h4><span>'+(alb.data?formatarData(alb.data)+' · ':'')+alb.fotos.length+' foto(s)</span></div><button class="album-admin-del" onclick="deletarAlbum('+idx+')"><i class="ti ti-trash"></i> Excluir</button>';
     cont.appendChild(card);
   });
 }
 function deletarAlbum(idx){
-  if(!confirm('Excluir o álbum "'+albuns[idx].titulo+'"?')) return;
-  albuns.splice(idx,1);
-  salvarAlbuns();
-  renderGaleriaAlbuns();
-  renderHomeAlbuns();
+  if(!confirm('Excluir o álbum "'+albuns[idx].titulo+'"?'))return;
+  albuns.splice(idx,1);salvarAlbuns();renderGaleriaAlbuns();renderHomeAlbuns();
 }
-
-// ── Lightbox ───────────────────────────────────────
 function abrirModal(src){
-  document.getElementById('galeria-modal-img').src = src;
+  document.getElementById('galeria-modal-img').src=src;
   document.getElementById('galeria-modal').classList.add('open');
   document.body.style.overflow='hidden';
 }
@@ -1632,11 +1539,7 @@ function fecharModal(){
   document.getElementById('galeria-modal').classList.remove('open');
   document.body.style.overflow='';
 }
-document.addEventListener('keydown',function(e){
-  if(e.key==='Escape') fecharModal();
-});
-
-// ── Init ───────────────────────────────────────────
+document.addEventListener('keydown',function(e){if(e.key==='Escape')fecharModal();});
 carregarAlbuns();
 renderGaleriaAlbuns();
 renderHomeAlbuns();
